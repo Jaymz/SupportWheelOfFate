@@ -1,0 +1,8 @@
+Each shift duration assumed to be half a day (this appears to be immutable)
+
+"2 weeks" duration is ambiguous. If it's 2 work weeks, that's 10 days between
+10 engineers, 20 shifts with 2 shifts per engineer. This results in BR2 potentially
+being unable to be met, if one of the only remaining 2 engineers on the last day also 
+worked the day before. A simple brute force approach of generating the full 2 weeks
+schedule and just returning the requested day has been implemented. If the last day 
+cannot be fulfilled, it will retry from the beginning.
