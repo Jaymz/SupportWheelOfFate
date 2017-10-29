@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SupportWheelOfFate.Mocks\SupportWheelOfFate.Mocks.csproj" />
+    <ProjectReference Include="..\SupportWheelOfFate.Services\SupportWheelOfFate.Services.csproj" />
     <ProjectReference Include="..\SupportWheelOfFate\SupportWheelOfFate.csproj" />
   </ItemGroup>
 

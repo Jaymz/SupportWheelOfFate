@@ -59,8 +59,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MockSchedule.cs" />
-    <Compile Include="MockWorkforce.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SupportWheelOfFate.Mocks\SupportWheelOfFate.Mocks.csproj">
+      <Project>{ff6b2217-2fd4-4af5-81d2-84ad60bb38c7}</Project>
+      <Name>SupportWheelOfFate.Mocks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SupportWheelOfFate.Services\SupportWheelOfFate.Services.csproj">
       <Project>{418f90c8-1c3d-4953-97a4-0e3f15132a90}</Project>
       <Name>SupportWheelOfFate.Services</Name>

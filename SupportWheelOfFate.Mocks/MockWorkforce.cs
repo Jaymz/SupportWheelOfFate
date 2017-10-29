@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SupportWheelOfFate.Tests
+namespace SupportWheelOfFate.Mocks
 {
     public class MockWorkforce : IWorkforce
     {

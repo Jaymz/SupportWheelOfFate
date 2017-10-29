@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace SupportWheelOfFate.Services
 {
-    public interface IScheduleService
-    {
-        ISchedule GetSchedule();
-        void FillSchedule();
-    }
 
     public class ScheduleService : IScheduleService
     {
         private ISchedule _schedule;
         private IWorkforce _workforce;
         private IBusinessRules _rules;
+
+        public bool ScheduleFilled { get; set; }
 
         public ScheduleService(ISchedule schedule, IWorkforce workforce, IBusinessRules rules)
         {
@@ -42,10 +39,12 @@ namespace SupportWheelOfFate.Services
                         PickTwo();
                     }
                 }
-                catch (Exception ex) {
+                catch (Exception) {
                     tryAgain = true;
                 }
             } while (tryAgain);
+
+            ScheduleFilled = true;
         }
 
         private void PickTwo()

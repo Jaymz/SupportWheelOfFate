@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SupportWheelOfFate.Services;
+using SupportWheelOfFate.Mocks;
 
 namespace SupportWheelOfFate.API
 {
@@ -25,16 +27,13 @@ namespace SupportWheelOfFate.API
         {
             services.AddMvc();
 
-            var rules = new TaskBusinessRules() {
-                AllowConsecutiveDays = false,
-                MaxShiftsPerDay = 1
-            };
-            
             // Simple service registration
-            services.AddSingleton<IBusinessRules>(rules);
+            services.AddSingleton<IBusinessRules, TaskBusinessRules>();
             services.AddSingleton<IEngineerFactory, EngineerFactory>();
-            services.AddSingleton<IWorkforce, Workforce>();
-            services.AddSingleton<ISchedule, Schedule>();
+            services.AddSingleton<IWorkforce, MockWorkforce>();
+            services.AddSingleton<ISchedule, MockSchedule>();
+
+            services.AddSingleton<IScheduleService, ScheduleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
